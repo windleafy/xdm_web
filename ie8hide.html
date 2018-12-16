@@ -1,11 +1,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <!-[if IE 8]>
-	  <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
 	<![endif]->
 
     <title>视频播放测试</title>
@@ -18,7 +18,7 @@
 		video{
 			position:absolute;
 			left:0px;
-			top:0px;
+			top: 0px;
 			z-index:-1;
 			width: 100%
 		}
@@ -28,9 +28,12 @@
 	$(document).ready(function(){
 	  
 	  $("#video-large").hide();
-	  document.getElementById("video-large").style.display="none";
+	  
+	  //document.getElementById("wind").style.display="none";
+	  
 	  $("#non-video-large").click(function(){
 	  $("#video-large").show();
+	  document.getElementById("wind").style.display="";
 	  $("#non-video-large").hide();
 	  });
 
@@ -47,9 +50,9 @@
 		<i id="close" class="fa fa-close" style="font-size:24px;color:gray"></i>
 	    <video width="100%" controls="controls" muted="" autoplay="autoplay">
 	        <source src="full.mp4" type="video/mp4">
-	        <!–[if lt IE 8]>
+	       	<!–[if lt IE 8]>
               	<embed id="wind" src="full.mp4" width="100%" height="1080px" autostart=true/>
-          	<![endif]–>  
+          	<![endif]–> 
 	    </video>
 	    <br>
 	 </div>
