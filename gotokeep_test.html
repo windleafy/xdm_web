@@ -41,11 +41,13 @@
         $(".video-large-wrap").hide();
         $("#video-play").click(function(){
         $(".video-large-wrap").show();
+        $("#video-large").trigger("play");
         $(".body-wrap").hide();
         });
 
         $("#video-close").click(function(){
         $(".video-large-wrap").hide();
+        $("#video-large").trigger("pause");
         $(".body-wrap").show();
         });
       });
