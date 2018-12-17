@@ -10,9 +10,6 @@
     <link rel="dns-prefetch" href="//staticweb.keepcdn.com">
     <link rel="dns-prefetch" href="//static1.keepcdn.com">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-    <!--script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script>
-    <script id="_ga-script" galink="//www.google-analytics.com/analytics.js" async="" src="//www.google-analytics.com/analytics.js"></script>
-    <script id="_sa-script" salink="https://staticweb.keepcdn.com/staticShow/js/common/lib/sensorsdata-1-78d54c062c.10.1.full.min.js" async="" src="https://staticweb.keepcdn.com/staticShow/js/common/lib/sensorsdata-1-78d54c062c.10.1.full.min.js"></script-->
     <script>/*
     # 不做适配时，html fontsize默认设置，便于css使用rem
 */
@@ -20,9 +17,9 @@
     var designFontSize = 10 || 10;
     document.documentElement.style.fontSize = designFontSize + "px";
 }();</script>
-    <!--link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"-->
+    <link rel="icon" type="image/png" href="./resources/192.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./resources/192.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="./resources/192.png" sizes="16x16">
     <script>
     var is_Keep = false;
     </script>
@@ -32,43 +29,10 @@
     <script>
     var is_tablet = false;
     </script>
-    <!--script>
-    var keep_app_header = { "x-user-id": "", "x-device-id": "", "x-is-new-device": "", "x-version-name": "", "x-version-code": "", "x-channel": "", "x-keep-timezone": "", "x-manufacturer": "", "x-model": "", "x-model-raw": "", "x-os": "", "x-os-version": "", "x-screen-height": "", "x-screen-width": "", "x-locale": "", "x-request-id": "1fcded2db60b932a03cacf8a9a95a424", "x-app-platform": "other", "x-abtest-tags": "", "authorization": "" };
-    var keep_api_host = { "api": "https://api.gotokeep.com", "social": "https://api.gotokeep.com/social", "training": "https://api.gotokeep.com/training", "account": "https://api.gotokeep.com/account", "diamond": "https://api.gotokeep.com/diamond", "ec": "https://store.gotokeep.com/api", "risk": "https://api.gotokeep.com/risk", "running": "https://api.gotokeep.com/running", "lego": "https://api.gotokeep.com/lego", "pd": "https://api.gotokeep.com/pd", "klass": "https://api.gotokeep.com/klass", "open": "https://open.gotokeep.com", "upload": "https://upload.gotokeep.com/wharf", "apm": "https://apm.gotokeep.com", "bootcamp": "https://api.gotokeep.com/bootcamp", "caliper": "https://api.gotokeep.com/caliper", "kprime": "https://api.gotokeep.com/kprime" };
-    var share_userid = '' ? '' : null;
-    var inapp_url = '/' ? '/' : null;
-    </script-->
     <script>
     var keep_user = null;
     </script>
-    <!--script>
-    ! function i(a, s, c) {
-        function u(t, r) { if (!s[t]) { if (!a[t]) { var e = "function" == typeof require && require; if (!r && e) return e(t, !0); if (f) return f(t, !0); var o = new Error("Cannot find module '" + t + "'"); throw o.code = "MODULE_NOT_FOUND", o } var n = s[t] = { exports: {} };
-                a[t][0].call(n.exports, function(r) { var e = a[t][1][r]; return u(e || r) }, n, n.exports, i, a, s, c) } return s[t].exports } for (var f = "function" == typeof require && require, r = 0; r < c.length; r++) u(c[r]); return u }({ 1: [function(r, e, t) { "use strict"; var o, n = r("keep-errormonitor/dist/keeperrormonitor.common.js"),
-                i = (o = n) && o.__esModule ? o : { default: o };
-            window.Errormonitor = i.default, i.default.setHeaders(keep_app_header), i.default.init() }, { "keep-errormonitor/dist/keeperrormonitor.common.js": 2 }], 2: [function(r, e, t) { "use strict"; var o, p = 0 < window.location.href.indexOf("pre.gotokeep") ? "http://apm.pre.gotokeep.com/monitor/fe/service" : "https://apm.gotokeep.com/monitor/fe/service",
-                l = (o = (new Date).getTime(), "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(r) { var e = (o + 16 * Math.random()) % 16 | 0; return o = Math.floor(o / 16), ("x" === r ? e : 7 & e | 8).toString(16) })),
-                x = null,
-                i = function(r) { var e = r.type,
-                        t = r.url,
-                        o = r.scriptUrl,
-                        n = void 0 === o ? "" : o,
-                        i = r.msg,
-                        a = void 0 === i ? "" : i,
-                        s = r.lineNum,
-                        c = void 0 === s ? 0 : s,
-                        u = r.colNum,
-                        f = void 0 === u ? 0 : u; try {! function(r, e, t, o) { var n = this,
-                                i = new XMLHttpRequest; if (i.open("POST", r, !0), i.setRequestHeader("content-Type", "application/json"), e)
-                                for (var a in e) e[a] && i.setRequestHeader(a, e[a]);
-                            i.onreadystatechange = function() { 4 === i.readyState && 200 === i.status && o && o.call(n, i.responseText) }, i.send(window.JSON.stringify(t)) }(p, x, { uuid: l, type: e, url: t || window.location.href, scriptUrl: n, msg: a, lineNum: c, colNum: f }) } catch (r) { console.error(r) } },
-                n = { setHeaders: function(r) { x = r }, error: function(r) { i({ type: "error", msg: r }) }, log: function(r) { i({ type: "log", msg: r }) }, vueErrorHandler: function(r, e, t) { console.error(r); var o = r.stack.toString();
-                        this.error(o) }, init: function() { i({ type: "pv" }), window.addEventListener("error", function(r) { var e = r.target,
-                                t = e.tagName.toLowerCase(); if (-1 !== ["script", "link", "img"].indexOf(t)) { var o = "link" === t ? e.href : e.src;
-                                i({ type: "lost", scriptUrl: o, msg: t + " src：" + o + " file failed loading. " }) } }, !0), window.onerror = function(r, e, t, o, n) { try { return !("Script error." !== r && !e || (setTimeout(function() { var r = { type: "error" };
-                                    o = o || window.event && window.event.errorCharacter || 0, r.scriptUrl = e, r.lineNum = t, r.colNum = o, n && n.stack && (r.msg = n.stack.toString()), i(r) }, 0), 1)) } catch (r) { console.error(r) } } } };
-            n.version = "1.1.0", e.exports = n }, {}] }, {}, [1]);
-    </script-->
+
     <link rel="stylesheet" href="https://staticweb.keepcdn.com/staticShow/vendors/webfont/css/keep_icon-645549d368.css">
     <link rel="stylesheet" href="https://staticweb.keepcdn.com/staticShow/css/common/common-a6bafdb17d.css">
     <link rel="stylesheet" href="https://staticweb.keepcdn.com/staticShow/css/homepage-ddedc35afe.css">
@@ -407,92 +371,7 @@
                                 t = s.url || window.location.href;
                             window.wx.onMenuShareTimeline({ title: e, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }), window.wx.onMenuShareAppMessage({ title: e, desc: s.content, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }), window.wx.onMenuShareQQ({ title: e, desc: s.content, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }), window.wx.onMenuShareQZone({ title: e, desc: s.content, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }) }) }, version: "1.0.0" };
             n.exports = o }, {}] }, {}, [1]);
-    </script>
-    <!--script>
-    (function(para) {
-        var p = para.sdk_url,
-            n = para.name,
-            w = window,
-            d = document,
-            s = 'script',
-            x = null,
-            y = null;
-        w['sensorsDataAnalytic201505'] = n;
-        w[n] = function(a) {
-            return function() {
-                (w[n]._q = []).push([a, arguments]);
-            }
-        };
-        var ifs = ['track', 'quick', 'register', 'registerPage', 'registerOnce', 'clearAllRegister', 'trackSignup', 'trackAbtest', 'setProfile', 'setOnceProfile', 'appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify', 'login', 'logout', 'trackLink', 'clearAllRegister'];
-        for (var i = 0; i < ifs.length; i++) {
-            w[n][ifs[i]] = w[n].call(null, ifs[i]);
-        }
-        if (!w[n]._t) {
-            x = d.createElement(s), y = d.getElementsByTagName(s)[0];
-            x.setAttribute('id', '_sa-script');
-            x.setAttribute('salink', p);
-            x.async = 1;
-            y.parentNode.insertBefore(x, y);
-            w[n]._t = 1 * new Date();
-            w[n].para = para;
-        }
-    })({
-        sdk_url: 'https://staticweb.keepcdn.com/staticShow/js/common/lib/sensorsdata-1-78d54c062c.10.1.full.min.js',
-        name: 'sa',
-        server_url: keep_api_host.apm + '/v1.1/log/client/web?format=json',
-        custom_header: keep_app_header,
-        send_type: 'ajax',
-        heatmap_url: 'https://staticweb.keepcdn.com/staticShow/js/common/lib/heatmap-d5063680fc.min.js',
-        web_url: 'https://data.gotokeep.com/',
-        heatmap: {
-            collect_url: function() {
-                //采集页面
-                if (location.href.indexOf('bootcamp/join') >= 0 || location.href.indexOf('/klass/') >= 0 || location.href.indexOf('/mall/') >= 0) {
-                    return true;
-                }
-            }
-        }
-    });
-    </script-->
-    <script>
-    //sa.quick('autoTrack');
-    </script>
-    <!--script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.setAttribute('id', '_ga-script');
-        a.setAttribute('galink', g);
-        a.async = 1;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-75855126-1', 'auto');
-    ga('require', 'linkid');
-    </script>
-    <script>
-    if ('') ga('set', 'campaignSource', '');
-    if ('') ga('set', 'campaignMedium', '');
-    if ('') ga('set', 'campaignName', '');
-    ga('send', 'pageview');
-    </script>
-    <script src="https://staticweb.keepcdn.com/staticShow/js/homepage-4679863d6f.js"></script>
-    <script>
-    (function() {
-        var s = document.getElementById('_sa-script');
-        s.src = s.getAttribute('salink');
-    })();
-    </script-->
-    <!--script>
-    (function() {
-        var s = document.getElementById('_ga-script');
-        s.src = s.getAttribute('galink');
-    })();
-    </script-->
+    </script>    
 </body>
 
 </html>
