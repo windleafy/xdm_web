@@ -1,63 +1,50 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <!-[if IE 8]>
-	  <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-	<![endif]->
+	     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <![endif]->
 
     <title>视频播放测试</title>
 	<style>
-		i{
-			float:right;
-			margin-top: -10px;
-			margin-right: -6px	
-		}
-		video{
-			position:absolute;
-			left:0px;
-			top:0px;
-			z-index:-1;
-			width: 100%
-		}
+		.video-large video{position: absolute;top: 0;left: 0;z-index: -1;}
+    .video-large img{position: absolute;top: 15px;right: 15px;color: green;z-index: 3;}
 	</style>
 
 	<script type="text/javascript">
 	$(document).ready(function(){
 	  
-	  $("#video-large").hide();
-	  document.getElementById("video-large").style.display="none";
-	  $("#non-video-large").click(function(){
-	  $("#video-large").show();
-	  $("#non-video-large").hide();
+	  $(".video-large").hide();
+	  $(".non-video-large").click(function(){
+	  $(".video-large").show();
+	  $(".non-video-large").hide();
 	  });
 
 	  $("#close").click(function(){
-	  $("#video-large").hide();
-	  $("#non-video-large").show();
+	  $(".video-large").hide();
+	  $(".non-video-large").show();
 	  });
 	});
 	</script>
 
 </head>
 <body>
-	<div id="video-large">
-		<i id="close" class="fa fa-close" style="font-size:24px;color:gray"></i>
-	    <video width="100%" controls="controls" muted="" autoplay="autoplay">
-	        <source src="full.mp4" type="video/mp4">
-	        <!–[if lt IE 8]>
-              	<embed id="wind" src="full.mp4" width="100%" height="1080px" autostart=true/>
-          	<![endif]–>  
-	    </video>
-	    <br>
-	 </div>
+	<div class="video-large">
+	  <video width="100%" controls="controls" muted="" autoplay="autoplay">
+	      <source src="full.mp4" type="video/mp4">
+	      <!–[if lt IE 8]>
+          <embed windowlessVideo="true" src="full.mp4" volume=-4002 width="100%" height="100%" muted="" autostart="true">
+        <![endif]–>  
+	  </video>
+    <img id="close" src="close.png" width="30px" height="30px">
+	</div>
 
-    <div id="non-video-large">
-    	<p>
-    		hello world
-    	</p>
-    </div>
+  <div class="non-video-large">
+  	<p>
+  		hello world
+  	</p>
+  </div>
 </body>
 </html>
