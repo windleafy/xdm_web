@@ -50,8 +50,21 @@
         $("#video-large").trigger("pause");
         $(".body-wrap").show();
         });
+
+        $("#header-tab-expand").click(function(){
+        $(".nav-wrapper-phone").attr('class','nav-wrapper-phone show-tab');
+        });
+
+        $("#header-tab-close").click(function(){
+          document.getElementById("wind").className = "nav-wrapper-phone";  
+        });
+
       });
     </script>
+
+
+
+
 
     <link rel="stylesheet" href="./css/keep_icon-645549d368.css">
     <link rel="stylesheet" href="./css/common-a6bafdb17d.css">
@@ -117,7 +130,7 @@
                     <div class="social-media"><a href="javascript:;" class="wechat-link"><i class="keep-icon-wechat"></i><div class="wechat-qr"><img src="https://staticweb.keepcdn.com/staticShow/images/wechat-qr-429ecdac26.jpg"></div></a><a href="http://weibo.com/p/1006065342268417/home" target="_blank"><i class="keep-icon-weibo"></i></a><a href="https://twitter.com/KeepTrainer" target="_blank"><i class="keep-icon-twitter"></i></a><a href="https://www.instagram.com/keeptrainer/" target="_blank"><i class="keep-icon-instagram"></i></a></div>
                 </div>
             </nav>
-            <nav class="nav-wrapper-phone">
+            <nav id="wind" class="nav-wrapper-phone">
                 <div class="phone-head"><a href="/" id="header-home-link">
                     <img src="./resources/Wemeet.png" class="img"></a>
                     <div id="header-tab-expand" class="act-tab keep-icon-menu"></div>
