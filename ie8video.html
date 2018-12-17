@@ -1,15 +1,34 @@
 <html>
 <head>
-
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <title>视频播放测试</title>
 </head>
 <body>
 
-<video width="100%" controls="controls" muted="" autoplay="autoplay">
+<script type="text/javascript">
+  $(document).ready(function(){
+    
+    $("#play").click(function(){
+      alert("hello");
+    $("#myvideo").trigger("play");
+    });
+
+    $("#pause").click(function(){
+    $("#myvideo").trigger("pause");
+    });
+  });
+  </script>
+
+
+
+
+<video id="myvideo" width="100%" controls="controls" muted="" autoplay="autoplay">
       <source src="full.mp4" type="video/mp4" >
          <!–[if lt IE 8]>
               <embed src="full.mp4" width="100%" height="1080px" autostart=true/>
           <![endif]–>
 </video>
+<button id="play">播放</button>
+<button id="pause">暂停</button>
 </body>
 </html>
