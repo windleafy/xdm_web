@@ -7,80 +7,102 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="baidu-site-verification" content="BdxNxb2Jrw">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <link rel="dns-prefetch" href="//staticweb.keepcdn.com">
     <link rel="dns-prefetch" href="//static1.keepcdn.com">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <script>/*
-    # 不做适配时，html fontsize默认设置，便于css使用rem
-*/
-!function() {
-    var designFontSize = 10 || 10;
-    document.documentElement.style.fontSize = designFontSize + "px";
-}();</script>
+      # 不做适配时，html fontsize默认设置，便于css使用rem
+      */
+      !function() {
+          var designFontSize = 10 || 10;
+          document.documentElement.style.fontSize = designFontSize + "px";
+      }();
+    </script>
     <link rel="icon" type="image/png" href="./resources/192.png" sizes="32x32">
     <link rel="icon" type="image/png" href="./resources/192.png" sizes="96x96">
     <link rel="icon" type="image/png" href="./resources/192.png" sizes="16x16">
     <script>
-    var is_Keep = false;
+      var is_Keep = false;
     </script>
     <script>
-    var is_weibo = false;
+      var is_weibo = false;
     </script>
     <script>
-    var is_tablet = false;
+      var is_tablet = false;
     </script>
     <script>
-    var keep_user = null;
+      var keep_user = null;
+    </script>
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".video-large-wrap").hide();
+        $("#video-play").click(function(){
+        $(".video-large-wrap").show();
+        $(".body-wrap").hide();
+        });
+
+        $("#video-close").click(function(){
+        $(".video-large-wrap").hide();
+        $(".body-wrap").show();
+        });
+      });
     </script>
 
     <link rel="stylesheet" href="https://staticweb.keepcdn.com/staticShow/vendors/webfont/css/keep_icon-645549d368.css">
     <link rel="stylesheet" href="https://staticweb.keepcdn.com/staticShow/css/common/common-a6bafdb17d.css">
     <link rel="stylesheet" href="https://staticweb.keepcdn.com/staticShow/css/homepage-ddedc35afe.css">
-    <title>Keep | 自律给我自由</title>
+    <title>Wemeet | 自律给我自由</title>
 </head>
 
 <body data-keepversion="">
-    <div class="video-large-wrap">
-        <div id="video-close"><i class="keep-icon-close"></i></div><video id="video-large" src="full.mp4" controls=""></video>
-    </div>
-    <script>
-    (function() {
-        var height = window.innerHeight,
-            width = document.body.clientWidth;
-        if (typeof height != 'number') {
-            height = document.body.clientHeight;
-        }
-        var ratio = height / width;
-        document.write('<style>.video-head-wrap{padding-bottom:' + ratio * 100 + '% !important;}.body-wrap{padding-top:' + ratio * 100 + '%;}</style>');
-        //背景视频为1280*720
-        if (ratio > (720 / 1280)) {
-            var leftOffset = -(height * 1280 / 720 - width) / 2;
-            document.write('<style>#video-bg{height:100%;margin-left:' + leftOffset + 'px;}</style>');
-        } else {
-            var topOffset = -(width * 720 / 1280 - height) / 2;
-            document.write('<style>#video-bg{width:100%;margin-top:' + topOffset + 'px;}</style>');
-        }
-    })();
-    </script>
-    <style>
-    #appicon{
-      border-radius: 5px;
-    }
-    .video-head-wrap {
-        /*padding-bottom: 94.29590017825312% !important;*/
-    }
+  <div class="video-large-wrap">
+        <div id="video-close"><i class="keep-icon-close"></i></div>
+        <video id="video-large" src="full.mp4" controls="" muted="" autoplay="autoplay"></video>
+  </div>
 
-    .body-wrap {
-        /*padding-top: 94.29590017825312%;*/
-    }
-    </style>
-    <style>
-    #video-bg {
-        height: 102.3%;
-        /*margin-left: -379.44444444444446px;*/
-    }
-    </style>
-    <div class="body-wrap">
+  <script>
+      (function() {
+          var height = window.innerHeight,
+              width = document.body.clientWidth;
+          if (typeof height != 'number') {
+              height = document.body.clientHeight;
+          }
+          var ratio = height / width;
+          document.write('<style>.video-head-wrap{padding-bottom:' + ratio * 100 + '% !important;}.body-wrap{padding-top:' + ratio * 100 + '%;}</style>');
+          //背景视频为1280*720
+          if (ratio > (720 / 1280)) {
+              var leftOffset = -(height * 1280 / 720 - width) / 2;
+              document.write('<style>#video-bg{height:100%;margin-left:' + leftOffset + 'px;}</style>');
+          } else {
+              var topOffset = -(width * 720 / 1280 - height) / 2;
+              document.write('<style>#video-bg{width:100%;margin-top:' + topOffset + 'px;}</style>');
+          }
+      })();
+  </script>
+
+  <style>
+      #appicon{
+        border-radius: 5px;
+      }
+      .video-head-wrap {
+          /*padding-bottom: 94.29590017825312% !important;*/
+      }
+
+      .body-wrap {
+          /*padding-top: 94.29590017825312%;*/
+      }
+  </style>
+  <style>
+      #video-bg {
+          height: 102.3%;
+          /*margin-left: -379.44444444444446px;*/
+      }
+  </style>
+
+  <div class="body-wrap">
         <div class="keep-header">
             <nav class="nav-wrapper-pc-wider">
                 <div class="head-left">
@@ -326,9 +348,10 @@
                 </div>
             </footer>
         </div>
-    </div>
-    <script>
-    ! function t(o, c, s) {
+  </div>
+
+  <script>
+      ! function t(o, c, s) {
         function w(n, e) { if (!c[n]) { if (!o[n]) { var i = "function" == typeof require && require; if (!e && i) return i(n, !0); if (l) return l(n, !0); var a = new Error("Cannot find module '" + n + "'"); throw a.code = "MODULE_NOT_FOUND", a } var r = c[n] = { exports: {} };
                 o[n][0].call(r.exports, function(e) { var i = o[n][1][e]; return w(i || e) }, r, r.exports, t, o, c, s) } return c[n].exports } for (var l = "function" == typeof require && require, e = 0; e < s.length; e++) w(s[e]); return w }({ 1: [function(e, i, n) { "use strict"; var a, r = e("keep-jsbridge/dist/keepjsbridge.common.js"),
                 t = (a = r) && a.__esModule ? a : { default: a };
@@ -350,17 +373,17 @@
                         function i() { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("setSensorPageEvent", { event: e.event, data: e.data }) } i(), e.notOnShow || this.onShow({ callback: i }) }, setAdReportersEvent: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("setAdReportersEvent", { data: e.data }) }, jumpAdLink: function(e) { window.WebViewJavascriptBridge.callHandler("jumpAdLink", { url: e.url, data: e.data }) }, logToApp: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("logToApp", { tag: "webjsbridge_" + e.tag, message: e.message }) }, openMap: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("openMap", { lng: e.lng, lat: e.lat }) }, getLocationCity: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("getLocationCity", {}, function(e) { "string" == typeof e && (e = JSON.parse(e)), i.success && i.success(e) }) }, invokeReward: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("showPayAppreciationView", { entryId: i.entryId }, function(e) { "string" == typeof e && (e = JSON.parse(e)), i.callback && i.callback(e) }) }, previewImages: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("previewImages", { imageList: e.imageList, userName: e.userName, index: e.index }) }, getTitleBarHeight: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("getTitleBarHeight", {}, function(e) { "string" == typeof e && (e = JSON.parse(e)), i.success && i.success(e) }) }, getWxOAuthCode: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("getWxOAuthCode", {}, function(e) { "string" == typeof e && (e = JSON.parse(e)), i.success && i.success(e) }) }, joinEvent: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("joinEvent", { eventId: e.eventId }) }, setPushPermission: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("setPushPermission", {}, function(e) { "string" == typeof e && (e = JSON.parse(e)), "success" == e.result ? i.success && i.success() : "fail" == e.result && i.fail && i.fail() }) }, sendBroadcastEvent: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("sendBroadcastEvent", { name: e.name, data: e.data }) }, configWebBarRightButtons: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("configWebBarRightButtons", e) }, jumpToSearchProduct: function(n) { var a = this;
                         window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("jumpToSearchProduct", function(e, i) { a.openNewPage({ url: "keep://search/goods?name=商品&source=product", newWindow: 1 }), n.callback && n.callback(i) }) }, updateStatusBarStyle: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("updateStatusBarStyle", e) }, _onShowFunction: null, _onShowCallbackArr: [], onShow: function(e) { e.callback && s._onShowCallbackArr.push(e.callback), s._onShowFunction || (s._onShowFunction = function() { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onShow", function(e, i) { for (var n = 0, a = s._onShowCallbackArr.length; n < a; n++) "function" == typeof s._onShowCallbackArr[n] && s._onShowCallbackArr[n]() }) }, s._onShowFunction()) }, onShowC: function(e) { this.onShow(e) }, _onHideFunction: null, _onHideCallbackArr: [], onHide: function(e) { e.callback && s._onHideCallbackArr.push(e.callback), s._onHideFunction || (s._onHideFunction = function() { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onHide", function(e, i) { for (var n = 0, a = s._onHideCallbackArr.length; n < a; n++) "function" == typeof s._onHideCallbackArr[n] && s._onHideCallbackArr[n]() }) }, s._onHideFunction()) }, onHideC: function(e) { this.onHide(e) }, _onPullDownRefreshFunction: null, _onPullDownRefreshCallbackArr: [], onPullDownRefresh: function(e) { e.callback && s._onPullDownRefreshCallbackArr.push(e.callback), s._onPullDownRefreshFunction || (s._onPullDownRefreshFunction = function() { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onPullDownRefresh", function(e, i) { for (var n = 0, a = s._onPullDownRefreshCallbackArr.length; n < a; n++) "function" == typeof s._onPullDownRefreshCallbackArr[n] && s._onPullDownRefreshCallbackArr[n]() }) }, s._onPullDownRefreshFunction()) }, onBack: function(n) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onBack", function(e, i) { n.callback && n.callback(i) }) }, _onPageShareFunction: null, _onPageShareCallbackArr: [], onPageShare: function(e) { e.callback && s._onPageShareCallbackArr.push(e.callback), s._onPageShareFunction || (s._onPageShareFunction = function() { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onPageShare", function(e, i) { for (var n = 0, a = s._onPageShareCallbackArr.length; n < a; n++) "function" == typeof s._onPageShareCallbackArr[n] && s._onPageShareCallbackArr[n]() }) }, s._onPageShareFunction()) }, onPaySuccess: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onPaySuccess", function(e) { i.callback && i.callback(e) }) }, iOSIapOnPaySuccess: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("iOSIapOnPaySuccess", function(e) { i.callback && i.callback(e) }) }, openApplicationUrl: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("applicationOpenUrl", { url: e.url }) }, openWechatPaySign: function(e) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.callHandler("renewSign", { bizType: e.bizType, itemId: e.itemId, planId: e.planId, tradeFrom: e.tradeFrom }) }, onWechatPaySignResult: function(i) { window.WebViewJavascriptBridge && window.WebViewJavascriptBridge.registerHandler("onRenewSignResult", function(e) { "string" == typeof e && (e = JSON.parse(e)), i.callback && i.callback(e) }) }, version: "1.12.3" };
             i.exports = s }, {}] }, {}, [1]);
-    </script>
-    <script>
-    KeepJsbridge.ready(function() {
-        KeepJsbridge.stopLoadingAnimation();
-    })
-    </script>
-    <script>
+  </script>
+  <script>
+      KeepJsbridge.ready(function() {
+          KeepJsbridge.stopLoadingAnimation();
+      })
+  </script>
+  <script>
     var is_weixin = false;
-    </script>
-    <script>
-    ! function c(i, a, r) {
+  </script>
+  <script>
+      ! function c(i, a, r) {
         function u(t, e) { if (!a[t]) { if (!i[t]) { var n = "function" == typeof require && require; if (!e && n) return n(t, !0); if (l) return l(t, !0); var s = new Error("Cannot find module '" + t + "'"); throw s.code = "MODULE_NOT_FOUND", s } var o = a[t] = { exports: {} };
                 i[t][0].call(o.exports, function(e) { var n = i[t][1][e]; return u(n || e) }, o, o.exports, c, i, a, r) } return a[t].exports } for (var l = "function" == typeof require && require, e = 0; e < r.length; e++) u(r[e]); return u }({ 1: [function(e, n, t) { "use strict"; var s, o = e("keep-wechatjssdk/dist/keepwechatjssdk.common.js"),
                 c = (s = o) && s.__esModule ? s : { default: s };
@@ -378,7 +401,7 @@
                                 t = s.url || window.location.href;
                             window.wx.onMenuShareTimeline({ title: e, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }), window.wx.onMenuShareAppMessage({ title: e, desc: s.content, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }), window.wx.onMenuShareQQ({ title: e, desc: s.content, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }), window.wx.onMenuShareQZone({ title: e, desc: s.content, link: t, imgUrl: n, success: function() { s.successCallback && "function" == typeof s.successCallback && s.successCallback() } }) }) }, version: "1.0.0" };
             n.exports = o }, {}] }, {}, [1]);
-    </script>    
+  </script>    
 </body>
 
 </html>
