@@ -154,7 +154,7 @@ body {
     height: 100%;
     left: 0;
     top: 0;
-    background-image: url("https://staticweb.keepcdn.com/staticShow/images/homepage/head-1bb5fdbe97.jpg");
+    background-image: url("../resources/head-1bb5fdbe97.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -511,7 +511,7 @@ body {
     position: relative;
     height: 636px;
     background-color: #3d3744;
-    background-image: url("https://staticweb.keepcdn.com/staticShow/images/homepage/runbg-48ebfba6ba.jpg");
+    background-image: url("../resources/runbg-48ebfba6ba.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1322,7 +1322,7 @@ body {
 .link-wrap {
     position: relative;
     height: 368px;
-    background-image: url("https://staticweb.keepcdn.com/staticShow/images/homepage/linkbg-cb03791bf9.jpg");
+    background-image: url("../resources/linkbg-cb03791bf9.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -2280,7 +2280,7 @@ body {
         height: 63.6rem;
         padding: 0;
         background-color: #3d3744;
-        background-image: url("https://staticweb.keepcdn.com/staticShow/images/homepage/communitybg-sm-07813e09e8.jpg");
+        background-image: url("../resources/communitybg-sm-07813e09e8.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
